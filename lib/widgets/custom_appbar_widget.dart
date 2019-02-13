@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget {
             color: Colors.black,
             fontFamily: "Ubuntu",
             fontWeight: FontWeight.w700,
-            fontSize: 18),
+            fontSize: 22),
       ),
       centerTitle: true,
       elevation: 0,

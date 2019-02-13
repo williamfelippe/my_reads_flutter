@@ -32,9 +32,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: "My Books").build(context),
-      body: FutureBuilder<List<Book>>(
+      body: Container(
+        color: Colors.white,
+        child: FutureBuilder<List<Book>>(
           future: getAllBooks(),
           builder: (context, snapshot) => _fetchBooks(context, snapshot)),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _moveToSearchPage(context),
         tooltip: 'Move to search page',

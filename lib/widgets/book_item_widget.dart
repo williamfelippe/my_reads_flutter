@@ -9,11 +9,18 @@ class BookItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 5,
       child: Padding(
-        padding: EdgeInsets.only(top: 10.0, right: 15.0, bottom: 10.0, left: 15.0),
+        padding:
+            EdgeInsets.only(top: 10.0, right: 25.0, bottom: 10.0, left: 25.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            Container(
+              margin: const EdgeInsets.only(bottom: 15.0),
+              child: Image.network(this._book.imageLinks.thumbnail.isEmpty ? this._book.imageLinks.thumbnail : '',
+                fit: BoxFit.cover),
+            ),
             Text(
               this._book.title,
               style: TextStyle(
