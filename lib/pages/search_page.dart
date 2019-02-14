@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_books/widgets/custom_appbar_widget.dart';
 
 class SearchPage extends StatefulWidget {
   SearchPage({Key key}) : super(key: key);
@@ -11,16 +12,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Search Books",
-          style: TextStyle(
-              color: Colors.black,
-              fontFamily: "Ubuntu",
-              fontWeight: FontWeight.w700),
-        ),
-        centerTitle: true,
-      ),
+      appBar: CustomAppBar(title: "Search Books").build(context),
       body: Center(
         child: null,
       ),
