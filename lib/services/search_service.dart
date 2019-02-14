@@ -11,11 +11,10 @@ final Map<String, String> requestHeaders = {
   'Authorization': new Uuid().v4()
 };
 
-Future<List<Book>> searchBooks(query, {maxResults}) async {
+Future<List<Book>> searchBooks(query, {maxResults = 10}) async {
   final response = await http.post(baseUrl,
-      body: {query: query, maxResults: maxResults ? maxResults : 10},
-      headers: requestHeaders);
-      
+      body: {query: query, maxResults: maxResults}, headers: requestHeaders);
+
   if (response.statusCode == ServicesCodes.OK) {
     return allBooksFromJson(response.body);
   } else {
