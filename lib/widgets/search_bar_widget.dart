@@ -16,7 +16,22 @@ class SearchBar extends StatelessWidget {
       child: TextField(
         onChanged: (query) => _handleOnChangeQuery(query),
         decoration: InputDecoration(
-            hintText: "Procure por um livro...", icon: Icon(Icons.search)),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                width: 2,
+                color: Colors.orange,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                width: 2,
+                color: Colors.black,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+            ),
+            hintText: "Procure por um livro...",
+            prefixIcon: Icon(Icons.search, color: Colors.black)),
       ),
     );
   }
