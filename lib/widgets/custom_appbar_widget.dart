@@ -10,6 +10,9 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
       title: Text(
         title,
         style: TextStyle(
