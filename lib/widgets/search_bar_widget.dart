@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {
-  SearchBar({Key key, this.query: "", @required this.onChange}) : super(key: key);
+  SearchBar({Key key, @required this.onChange}) : super(key: key);
 
-  final String query;
-  final ValueChanged<String> onChange;
+  final Function onChange;
 
   void _handleOnChangeQuery(query) {
-    print('Query: $query');
     onChange(query);
   }
 

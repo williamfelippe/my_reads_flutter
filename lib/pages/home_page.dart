@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_books/models/book.dart';
 import 'package:my_books/pages/search_page.dart';
 import 'package:my_books/services/books_service.dart';
-import 'package:my_books/widgets/books_list_widget.dart';
+import 'package:my_books/widgets/books_grid_widget.dart';
 import 'package:my_books/widgets/custom_appbar_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,12 +20,19 @@ class _HomePageState extends State<HomePage> {
 
   Widget _fetchBooks(BuildContext context, snapshot) {
     if (snapshot.hasData) {
-      return BooksList(snapshot.data);
+      return BooksGrid(snapshot.data);
     } else if (snapshot.hasError) {
       return Text("${snapshot.error}");
     }
 
-    return CircularProgressIndicator();
+    return (
+      Center(
+        child: CircularProgressIndicator(
+          backgroundColor: Colors.orange,
+          strokeWidth: 3.0,
+        ),
+      )
+    );
   }
 
   @override

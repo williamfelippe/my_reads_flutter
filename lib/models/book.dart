@@ -46,7 +46,7 @@ class Book {
 
   Book(
       {this.title,
-      this.authors,
+      //this.authors,
       this.publishedDate,
       this.description,
       this.industryIdentifiers,
@@ -67,7 +67,7 @@ class Book {
 
   Book.fromJson(Map<String, dynamic> json) {
     title = json['title'];
-    authors = json['authors'].cast<String>();
+    //authors = json['authors'].cast<String>();
     publishedDate = json['publishedDate'];
     description = json['description'];
     if (json['industryIdentifiers'] != null) {
@@ -101,7 +101,7 @@ class Book {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['title'] = this.title;
-    data['authors'] = this.authors;
+    //data['authors'] = this.authors;
     data['publishedDate'] = this.publishedDate;
     data['description'] = this.description;
     if (this.industryIdentifiers != null) {
